@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import Navbar from './components/Navbar.js'
 import './App.css';
+import NavItem from './components/NavItem'
+import Dropdownmenu from './components/DropdownMenu.js'
+import { ReactComponent as BellIcon} from './icons/bell.svg'
+import { ReactComponent as PlusIcon} from './icons/plus.svg'
+import { ReactComponent as ArrowIcon} from './icons/arrow.svg'
+import { ReactComponent as MessengerIcon} from './icons/messenger.svg'
+import { ReactComponent as CaretIcon} from './icons/caret.svg'
+import { CSSTransition } from 'react-transition-group';
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Navbar>
+        <NavItem icon ={<PlusIcon/>}/>
+        <NavItem icon ={<BellIcon/>}/>
+        <NavItem icon ={<MessengerIcon/>}/>
+        <NavItem icon ={<CaretIcon/>}>
+          <Dropdownmenu/>
+          </NavItem>
+        
+
+        </Navbar>
+     </div>
   );
 }
 
